@@ -30,11 +30,18 @@
                 <div class="d-flex align-items-center mx-3 me-lg-0">
                     <!-- Navbar-->
                     <ul class="navbar-nav d-none d-lg-flex">
+                        @if (Auth::check())
                         <li class="nav-item"><a class="nav-link" href="index.html">Admin</a></li>
                         <li class="nav-item"><a class="nav-link" href="https://docs.startbootstrap.com/material-admin-pro" target="_blank">Documentation</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('logout')}}">LogOut</a></li>
+
+                        @else
+                        <li class="nav-item"><a class="nav-link" href="{{route('login.view')}}">Login</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('regView')}}">Register</a></li>
+                        @endif
                     </ul>
                     <!-- Navbar buttons-->
-                
+
                         <!-- Notifications and alerts dropdown-->
                         <div class="dropdown dropdown-notifications d-none d-sm-block">
                             <button class="btn btn-lg btn-icon dropdown-toggle me-3" id="dropdownMenuNotifications" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">notifications</i></button>
@@ -138,10 +145,10 @@
                             </a>
                             <!-- Divider-->
                             <div class="drawer-menu-divider d-sm-none"></div>
-                           
+
                          @include('sidebar')
 
-                
+
                     </div>
                     <!-- Drawer footer -->
                     <div class="drawer-footer border-top">
@@ -149,7 +156,7 @@
                             <i class="material-icons text-muted">account_circle</i>
                             <div class="ms-3">
                                 <div class="caption">Logged in as:</div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -159,7 +166,7 @@
             <div id="layoutDrawer_content">
                 <!-- Main page content-->
                 <main>
-                   
+
 
 
 
@@ -167,16 +174,16 @@
                @yield('contain_one')
 
                     <div class="container-xl p-5">
-                        
-                       
+
+
                     @yield('contain')
-            
+
                         </div>
-                       
-                        
-                       
+
+
+
                 <!-- Footer-->
-                
+
 
         <!-- Load Bootstrap JS bundle-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>

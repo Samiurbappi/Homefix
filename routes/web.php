@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\Controller;
 
 
 
@@ -9,6 +10,12 @@ Route::get('/', function () {
     return view('home');
 });
 
+// User controlle Route
+Route::get('login',[Controller::class,'loginView'])->name('login.view');
+Route::post('login/user',[Controller::class,'login'])->name('login');
+Route::get('reg',[Controller::class,'regView'])->name('regView');
+Route::post('register',[Controller::class,'register'])->name('register');
+Route::get('logout',[Controller::class,'logout'])->name('logout');
 
 // applience repare
 Route::get('applience',[ServiceController::class,'applience'])->name('applience');
