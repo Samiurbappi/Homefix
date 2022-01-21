@@ -7,8 +7,8 @@
                         <div class="row gx-5">
 
                             <div class="col-sm-6 col-lg-4 mb-5" >
-                                <a class="d-block ripple-gray rounded shadow-3 overflow-hidden mb-2" href="{{route('applience')}}"><img class="img-fluid" src="https://media.istockphoto.com/vectors/repair-appliances-logo-blue-vector-id599906012?k=6&m=599906012&s=612x612&w=0&h=ebEmt3yxl2DNhjY5BfmBTO8UVExNe0BNcXIUHIe-hpk=" alt="..." /></a>
-                                <div class="small font-monospace text-center">Applience repare</div>
+                                <a class="d-block ripple-gray rounded shadow-3 overflow-hidden mb-2" href="{{route('car.service.list')}}"><img class="img-fluid" src="https://media.istockphoto.com/vectors/repair-appliances-logo-blue-vector-id599906012?k=6&m=599906012&s=612x612&w=0&h=ebEmt3yxl2DNhjY5BfmBTO8UVExNe0BNcXIUHIe-hpk=" alt="..." /></a>
+                                <div class="small font-monospace text-center">Car Serviecs</div>
                             </div>
 
                             <div class="col-sm-6 col-lg-4 mb-5">

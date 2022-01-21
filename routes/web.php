@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\SP\CarController;
 use App\Http\Controllers\Controller;
 
 
@@ -35,7 +36,14 @@ Route::get('AC_reparing',[ServiceController::class,'AC_reparing'])->name('AC_rep
 
 
 
-// car rental
+// car.service.create
+Route::get('/car/service/list',[CarController::class,'serviceList'])->name('car.service.list');
+Route::get('/car/create/service',[CarController::class,'carService'])->name('car.service.create');
+Route::post('/car/store/service',[CarController::class,'carServicestore'])->name('car.store.service');
+Route::get('/car/service/approve/{id}',[CarController::class,'approve'])->name('car.service.approve');
+Route::get('/car/service/delete/{id}',[CarController::class,'delete'])->name('car.service.delete');
+// wazed
+
 Route::get('car_rental',[ServiceController::class,'car_rental'])->name('car_rental');
 Route::get('car_rental/add',[ServiceController::class,'addCar'])->name('add.car');
 Route::post('car_rental/info',[ServiceController::class,'storeCar'])->name('store.car');
