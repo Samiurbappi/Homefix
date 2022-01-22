@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SP\CarController;
@@ -58,4 +59,5 @@ Route::get('emergency_service',[ServiceController::class,'emergency_service'])->
 Route::get('plumbing_service',[ServiceController::class,'plumbing_service'])->name('plumbing_service');
 
 
-// plumbing
+// cart add.cart
+Route::get('card/add/{id}',[CartController::class,'addCart'])->name('add.cart');

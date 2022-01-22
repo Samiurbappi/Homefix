@@ -26,7 +26,15 @@ class CarController extends Controller
     }
     public function serviceList()
     {
-        $ser = Car::all();
+        if(auth()->check())
+        {
+            if(Auth::user()->role=='admin'||Auth::user()->role=='sp')
+            {
+                $ser = Car::all();
+                return view('services.car.service_list',compact('ser'));
+            }
+        }
+        $ser = Car::where('status','Approve')->get();
         return view('services.car.service_list',compact('ser'));
     }
     public function approve($id)
@@ -39,7 +47,7 @@ class CarController extends Controller
     {
         $data = Car::find($id);
         $data->delete();
-        return redirect()->back();  
+        return redirect()->back();
     }
 
 }
