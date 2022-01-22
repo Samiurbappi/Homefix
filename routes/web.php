@@ -61,3 +61,4 @@ Route::get('plumbing_service',[ServiceController::class,'plumbing_service'])->na
 
 // cart add.cart
 Route::get('card/add/{id}',[CartController::class,'addCart'])->name('add.cart');
+Route::get('card/view',[CartController::class,'Cartview'])->name('cart.view');
