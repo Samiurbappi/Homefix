@@ -5,13 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Car extends Model
+class Cart extends Model
 {
     use HasFactory;
     protected $guarded=[];
-    public function user()
+    public function service()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Car::class,'service_id','id');
     }
-
 }
